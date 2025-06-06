@@ -88,4 +88,4 @@ Ivano Gabriel / https://www.instagram.com/i.gabriel13_/
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes. (Se você não tem um arquivo LICENSE, pode remover esta seção ou criar um).
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes. 
