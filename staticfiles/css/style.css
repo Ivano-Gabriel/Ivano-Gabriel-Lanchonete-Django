@@ -1,0 +1,198 @@
+/* cardapio/static/css/style.css */
+
+/* --- Definição das Cores --- */
+:root {
+    --cor-preto-principal: #1a1a1a;          /* Preto um pouco mais profundo */
+    --cor-creme-claro: #f8f8f8;              /* Creme mais puxado para o branco */
+    --cor-destaque-laranja: #FF8C00;         /* Laranja mais vibrante para a home */
+    --cor-destaque-amarelo: #FFD700;         /* Amarelo dourado mais puro para o cardápio */
+    --cor-texto-claro: #e0e0e0;             /* Texto claro, não totalmente branco */
+    --cor-texto-escuro: #303030;             /* Texto escuro mais suave */
+    --cor-cinza-claro-texto: #b0b0b0;        /* Para descrições em fundo escuro */
+    --cor-cinza-cards-escuro: #2a2a2a;      /* Fundo dos cards no cardápio */
+    --cor-borda-cards-escuro: #404040;      /* Borda dos cards */
+}
+
+/* --- Estilos Gerais para o corpo da página --- */
+body {
+    font-family: 'Lato', sans-serif !important;
+    background-color: var(--cor-creme-claro); /* Fundo padrão, será sobrescrito por classes específicas */
+    color: var(--cor-texto-escuro); /* Cor de texto padrão, será sobrescrito por classes específicas */
+    margin: 0; /* Remove margens padrão do body */
+    padding: 0; /* Remove paddings padrão do body */
+}
+
+/* --- Navbar (Barra de Navegação) --- */
+.navbar {
+    background-color: var(--cor-preto-principal) !important; /* Fundo escuro para a navbar */
+    border-bottom: 1px solid var(--cor-cinza-cards-escuro) !important; /* Linha sutil para separar */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar .navbar-brand {
+    color: var(--cor-destaque-amarelo) !important; /* Título da navbar em dourado */
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.navbar .nav-link {
+    color: var(--cor-texto-claro) !important; /* Texto claro na navbar */
+    transition: color 0.3s ease; /* Transição suave na cor */
+}
+
+.navbar .nav-link:hover {
+    color: var(--cor-destaque-laranja) !important; /* Destaque ao passar o mouse */
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 215, 0, 0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important; /* Ícone do toggler em amarelo */
+}
+
+
+/* --- Estilo para a Página Inicial (Home, Sobre Mim, Sobre Lanchonete) --- */
+.page-home-layout {
+    background-color: var(--cor-creme-claro);
+    color: var(--cor-texto-escuro);
+    min-height: calc(100vh - 70px); /* Ajuste a altura considerando a navbar */
+    padding-top: 60px; /* Mais espaço do topo */
+    padding-bottom: 60px; /* Mais espaço do fundo */
+    display: flex; /* Para centralizar o conteúdo verticalmente */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-home-layout h1 {
+    color: var(--cor-destaque-laranja) !important; /* Título principal em laranja */
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.page-home-layout .lead {
+    color: var(--cor-texto-escuro) !important;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.page-home-layout hr {
+    border-color: var(--cor-destaque-laranja) !important; /* Linha de separação em laranja */
+    width: 10%; /* Largura menor para a linha */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.page-home-layout p {
+    color: var(--cor-texto-escuro) !important;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Botão de destaque na Home (laranja) */
+.btn-home-destaque {
+    background-color: var(--cor-destaque-laranja) !important;
+    border-color: var(--cor-destaque-laranja) !important;
+    color: white !important;
+    padding: 12px 35px; /* Aumenta o padding do botão */
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 30px; /* Mais arredondado */
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn-home-destaque:hover {
+    background-color: #e65c00 !important; /* Um tom ligeiramente mais escuro */
+    border-color: #e65c00 !important;
+    transform: translateY(-2px); /* Efeito de levitar */
+}
+
+/* --- Estilo para a Página de Cardápio --- */
+.cardapio-page-background {
+    background-color: var(--cor-preto-principal) !important;
+    color: var(--cor-texto-claro) !important;
+    min-height: calc(100vh - 70px); /* Ajuste a altura considerando a navbar */
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Título principal do cardápio */
+.cardapio-page-background h1 {
+    color: var(--cor-destaque-amarelo) !important; /* Título "Hora da Escolha!" em amarelo dourado */
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para o título */
+}
+
+/* Estilo para os cards de categoria no cardápio */
+.cardapio-card-categoria {
+    background-color: var(--cor-cinza-cards-escuro) !important; /* Fundo dos cards */
+    border: 1px solid var(--cor-borda-cards-escuro) !important; /* Borda sutil */
+    color: var(--cor-texto-claro) !important;
+    border-radius: 12px; /* Mais arredondado */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para os cards */
+    transition: transform 0.3s ease; /* Transição para efeito hover */
+}
+
+.cardapio-card-categoria:hover {
+    transform: translateY(-5px); /* Efeito de levitar ao passar o mouse */
+}
+
+.cardapio-card-categoria .card-header {
+    background-color: var(--cor-preto-principal) !important; /* Cabeçalho do card mais escuro */
+    color: var(--cor-destaque-amarelo) !important; /* Título da categoria em amarelo dourado */
+    font-size: 1.6em;
+    font-weight: bold;
+    border-bottom: 1px solid var(--cor-borda-cards-escuro) !important;
+    padding: 18px 25px;
+}
+
+.cardapio-card-categoria .list-group-item {
+    background-color: var(--cor-cinza-cards-escuro) !important; /* Fundo dos itens da lista */
+    border-color: var(--cor-borda-cards-escuro) !important;
+    color: var(--cor-texto-claro) !important;
+    padding: 18px 25px;
+    display: flex; /* Garante que os itens fiquem alinhados */
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.cardapio-card-categoria .list-group-item:hover {
+    background-color: #3b3b3b !important; /* Fundo ligeiramente mais claro no hover */
+}
+
+.cardapio-card-categoria .list-group-item h5 {
+    color: var(--cor-texto-claro) !important;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.cardapio-card-categoria .list-group-item p {
+    color: var(--cor-cinza-claro-texto) !important;
+    font-size: 0.95em;
+}
+
+/* Estilo para o preço do item no cardápio */
+.cardapio-card-categoria .badge {
+    background-color: var(--cor-destaque-amarelo) !important; /* Cor do badge (preço) em amarelo dourado */
+    color: var(--cor-preto-principal) !important; /* Texto do badge em preto */
+    font-weight: bold;
+    font-size: 1.2em; /* Aumenta o tamanho do preço */
+    padding: 10px 15px;
+    border-radius: 25px !important; /* Mais arredondado */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra no preço */
+}
+
+/* Quando não há itens na categoria */
+.cardapio-card-categoria .list-group-item.text-muted {
+    color: var(--cor-cinza-claro-texto) !important;
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+}

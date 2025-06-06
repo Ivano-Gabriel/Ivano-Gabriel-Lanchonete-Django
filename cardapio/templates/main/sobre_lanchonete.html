@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Sobre a Lanchonete - Lanchonete Project{% endblock %}
+
+{% block content %}
+<div class="text-center page-home-layout">
+    <h1 class="display-4">Sobre a Lanchonete-Project</h1>
+    <img src="{% static 'minha_lanchonete/lanchonete.jpg' %}"
+    style="width: 350px; height: 250px; object-fit: cover;" alt="Lanchonete!">
+    <p class="lead">A 'Lanchonete Projeto' é o segundo projeto que desenvolvo.</p>
+    <p>O projeto visa resolver problemas que pessoas comúns têm no dia a dia, e supre a necessidade
+        de sites eficientes que funcionem nas empresas pequenas.</p>
+    <p>Venha nos visitar e provar da eficiência como se fosse na vida real!</p>
+    <p>Saiba aqui como o projeto foi feito pelo meu repositório do Github &DownArrow;&DownArrow;</p>
+</div>
+{% endblock content %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Nosso Cardápio - Lanchonete Projeto{% endblock %}
+
+{% block content %}
+<div class="cardapio-page-background container py-5">
+    <div class="text-center mb-4">
+        <h1>Hora da Escolha!</h1>
+    </div>
+
+    {% for categoria in categorias %}
+        <div class="card mb-4 cardapio-card-categoria">
+            <div class="card-header">
+                <h2 class="h5 mb-0">{{ categoria.nome }}</h2>
+            </div>
+            <ul class="list-group list-group-flush">
+                {% for item in categoria.itens.all %}
+                    {% if item.disponivel %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"> {# Adicionei flex-wrap para melhor responsividade #}
+                        <div class="me-auto p-2"> {# me-auto para empurrar o resto para a direita #}
+                            <h5>{{ item.nome }}</h5>
+                            {% if item.descricao %}
+                                <p class="mb-0 text-muted">{{ item.descricao }}</p> {# text-muted para um tom mais suave #}
+                            {% endif %}
+                        </div>
+                        <span class="badge rounded-pill bg-warning text-dark me-3 p-2">R$ {{ item.preco|stringformat:".2f" }}</span> {# Bootstrap bg-warning para o dourado/laranja #}
+                        
+                        {# CONTROLES DE QUANTIDADE E BOTÃO DE COMPRA #}
+                        <div class="d-flex align-items-center mt-2 mt-sm-0"> {# mt-2 para mobile, mt-sm-0 para desktop #}
+                            <div class="input-group input-group-sm quantity-control me-2" data-item-id="{{ item.id }}"> {# Adicionado data-item-id para JS #}
+                                <button class="btn btn-outline-warning btn-decrease" type="button">-</button>
+                                <input type="text" class="form-control text-center quantity-display" value="0" readonly>
+                                <button class="btn btn-outline-warning btn-increase" type="button">+</button>
+                            </div>
+                            <button class="btn btn-success add-to-cart-btn" data-item-id="{{ item.id }}" data-item-name="{{ item.nome }}" data-item-price="{{ item.preco }}">
+                                Adicionar
+                            </button>
+                        </div>
+                    </li>
+                    {% endif %}
+                {% empty %}
+                    <li class="list-group-item text-center text-muted">Nenhum item disponível nesta categoria.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}

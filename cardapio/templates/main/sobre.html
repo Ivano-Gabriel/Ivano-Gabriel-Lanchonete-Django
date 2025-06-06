@@ -1,0 +1,45 @@
+{% extends 'base.html' %} 
+
+{% load static %} 
+
+{% block title %}Sobre o Desenvolvedor - Lanchonete Projeto{% endblock %}
+
+{% block content %}
+<div class="text-center py-5"> 
+    <div class="container"> 
+        <div class="row justify-content-center"> {# Centraliza o conteúdo horizontalmente #}
+            <div class="col-md-8 col-lg-6"> {# Define a largura para telas médias e grandes para melhor leitura #}
+                <h1 class="display-4 mb-4">Sobre o Desenvolvedor</h1>
+
+                <img src="{% static 'minha_lanchonete/instagram foto.png' %}"
+                    alt="Foto de Perfil de Ivano Gabriel"
+                    class="img-fluid rounded-circle mb-4 shadow" {# Classes Bootstrap para responsividade, formato redondo e uma leve sombra #}
+                    style="width: 350px; height: 350px; object-fit: cover;"> {# Tamanho, ajuste #}
+                    {# A borda e a sombra mais forte serão aplicadas pelo seu 'style.css' #}
+
+                <p class="lead mt-4">Olá! Eu sou Ivano Gabriel, o desenvolvedor  trás do projeto sobre lanchonete.</p>
+                <p>Como estudante de programação, minha maior paixão é transformar ideias em realidade digital. Este projeto foi um marco no meu aprendizado em <strong>Django</strong>, onde pude aplicar conhecimentos em desenvolvimento web, gerenciamento de banco de dados e design responsivo.</p>
+                <p>Espero que você aproveite a experiência e, quem sabe, encontre seu lanche favorito!</p>
+
+                <hr class="my-5"> 
+
+                <h2 class="h5 mb-4">Conecte-se comigo:</h2>
+                <ul class="list-unstyled d-flex flex-column align-items-center">  
+                    <li class="mb-3">
+                        <a href="https://www.instagram.com/i.gabriel13_/" target="_blank" rel="noopener noreferrer" class="d-inline-flex align-items-center text-decoration-none hover-effect">
+                            <i class="fa-brands fa-instagram fa-2x me-3"></i> 
+                            <span class="fw-bold">Instagram: i.gabriel13_</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Ivano-Gabriel" target="_blank" rel="noopener" class="d-inline-flex align-items-center text-decoration-none hover-effect">
+                            <i class="fa-brands fa-github fa-2x me-3"></i> 
+                            <span class="fw-bold">GitHub: Ivano-Gabriel</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}lanchonete - Ivano Gabriel{% endblock %}
+
+{% block content %}
+    <section class="hero-section text-center text-white d-flex flex-column align-items-center justify-content-center">
+        <div class="hero-content d-flex flex-column align-items-center"> {# Adicione d-flex flex-column e align-items-center AQUI TAMBÉM #}
+            <h1 class="display-2 fw-bold mb-4">Lanchonete Projeto</h1>
+            <p class="lead mb-5">Seu apetite é nossa felicidade.</p>
+
+            {# A IMAGEM VEM AQUI PRIMEIRO #}
+            <img src="{% static 'minha_lanchonete/tres.jpg' %}"
+                alt="Uma variedade de nossos deliciosos lanches"
+                class="img-fluid mb-4 rounded shadow-lg"
+                style="max-width: 80%; height: auto;">
+
+            {# O BOTÃO VEM AQUI ABAIXO DA IMAGEM #}
+            <a href="{% url 'cardapio:cardapio_view' %}" class="btn btn-warning btn-lg custom-hero-btn">
+                Acessar cardápio <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="container my-5 py-5">
+        <h2 class="text-center mb-4">Segundo projeto Python</h2>
+        <p class="text-center">Descubra os lanches mais pedidos e as novidades que preparamos para você.</p>
+    </section>
+{% endblock content %}
